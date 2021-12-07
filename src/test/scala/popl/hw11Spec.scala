@@ -9,7 +9,7 @@ class hw11Spec extends AnyFlatSpec {
   // typeInfer
   
   "typeInfer" should "handle object literals" in {
-    val e1 = "{var f: 0, const g: true}"
+    val e1 = "{let f: 0, const g: true}"
     assert(inferType(e1) === TObj(Map("f" -> (MLet, TNumber), "g" -> (MConst, TBool))))
     val e2 = "const x = {}; x"
     assert(inferType(e2) === TObj(Map.empty))

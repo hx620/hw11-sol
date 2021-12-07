@@ -430,7 +430,7 @@ object hw11 extends js.util.JsApp {
         
       // EvalObjLit
       case ObjLit(fes) =>
-        val sm0 = State.insert[Mem, Map[String, Val]](Map.empty)
+        val sm0 = State insert[Mem, Map[String, Val]] Map.empty
         fes.foldLeft(sm0) {
           case (sm, (fi, (_, ei))) =>
             for {
